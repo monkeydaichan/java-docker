@@ -20,11 +20,11 @@ services:
     tty: true
 
   db:
-    image: postgres:10.6-alpine
-    container_name: db-container
-    ports:
-      - "5432:5432"
-    environment:
+    image: postgres:10.6-alpine # Base image file
+    container_name: db-container # Container name
+    ports: # Port on the left to access,right side is the port inside the container
+      - "5432:5432" 
+    environment: # Container internal environment variable
       - "POSTGRES_USER=postgres"
       - "POSTGRES_PASSWORD=mysecretpassword1234"
     volumes: 
