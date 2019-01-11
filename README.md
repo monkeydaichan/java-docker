@@ -5,23 +5,28 @@ katomasa1254様からの依頼
 
 ```bash
 ├── README.md
-├── .dbdata # postgresqlのデータフォルダ
+├── .dbdata # data directoru of postgresql
 ├── docker
 │   ├── db
 │   │   └── init # 初期データ作成スクリプトフォルダ
 │   │       └── 1_createdb.sql
 │   └── web
-│       ├── Dockerfile # web用Dockerイメージ作成ファイル
-│       └── app # アプリ
+│       ├── Dockerfile # file for creating docker image
+│       └── app # appli
 │           └── connectTest.jar
-└── docker-compose.yml # docker-compose用ファイル
+│           └── postgresql-42.2.5.jar # jdbc driver
+└── docker-compose.yml # docker-compose file
 ```
 
 ## ソース取得
 Macの任意のディレクトリで下記コマンドを実行。
+またはリポジトリからzipファイルを取得。
 ```bash
 git clone https://github.com/monkeydaichan/docker-java.git
 ```
+
+## 設定変更
+docker-compose.ymlファイルの９行目をweb apiが使用するポートに変更
 
 ## 起動方法
 

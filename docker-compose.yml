@@ -18,6 +18,7 @@ services:
     #   - "$PWD/docker/web/app:/app" #共有フォルダの設定
     stdin_open: true
     tty: true
+    # command: ash # for debug
 
   db:
     image: postgres:10.6-alpine # Base image file
@@ -27,6 +28,7 @@ services:
     environment: # Container internal environment variable
       - "POSTGRES_USER=postgres"
       - "POSTGRES_PASSWORD=mysecretpassword1234"
+      - "POSTGRES_DB=testdb"
     volumes: 
       - $PWD/docker/db/init:/docker-entrypoint-initdb.d # Initial data create
       - dbdata:/var/lib/postgresql/data # mount postgresql volume
