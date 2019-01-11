@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  web:
+    build: $PWD/docker/web
+    image: webapi
+    container_name: web-container
+    ports:
+      - "3000:3000"
+    environment:
+      - "DATABASE_HOST=db"
+      - "DATABASE_PORT=5432"
+      - "DATABASE_USER=postgres"
+      - "DATABASE_PASSWORD=mysecretpassword1234"
+    links:
+      - db
+    # volumes:
+    #   - "$PWD/docker/web/app:/app" #共有フォルダの設定
+    stdin_open: true
+    tty: true
+    command: ash
+
+  db:
+    image: postgres:10.6-alpine
+    container_name: db-container
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=mysecretpassword1234"
+    volumes: 
+      - dbdata:/var/lib/postgresql/data
+
+volumes:
+  dbdata:
