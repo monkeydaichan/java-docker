@@ -2,13 +2,20 @@
 katomasa1254様からの依頼
 
 ## 納品物一覧
-tree構造で説明
+
+```bash
 ├── README.md
+├── .dbdata # postgresqlのデータフォルダ
 ├── docker
-│   ├── Dockerfile # web用Dockerイメージ作成ファイル
-│   └── app #　アプリ
-│       └── connectTest.jar
+│   ├── db
+│   │   └── init # 初期データ作成スクリプトフォルダ
+│   │       └── 1_createdb.sql
+│   └── web
+│       ├── Dockerfile # web用Dockerイメージ作成ファイル
+│       └── app # アプリ
+│           └── connectTest.jar
 └── docker-compose.yml # docker-compose用ファイル
+```
 
 ## 起動方法
 ソース取得

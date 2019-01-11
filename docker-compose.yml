@@ -29,7 +29,12 @@ services:
       - "POSTGRES_USER=postgres"
       - "POSTGRES_PASSWORD=mysecretpassword1234"
     volumes: 
+      - $PWD/docker/db/init:/docker-entrypoint-initdb.d
       - dbdata:/var/lib/postgresql/data
 
 volumes:
   dbdata:
+    driver_opts:
+      type: none
+      device: $PWD/.dbdata
+      o: bind
