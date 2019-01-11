@@ -34,6 +34,12 @@ docker-compose.ymlファイルの９行目をweb apiが使用するポートに�
 cd docker-java
 ```
 
+dbdataディレクトリの作成
+
+```bash
+mkdir .dbdata
+```
+
 docker起動コマンド
 ```bash
 docker-compose up -d

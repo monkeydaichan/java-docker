@@ -12,13 +12,16 @@ services:
       - "DATABASE_PORT=5432"
       - "DATABASE_USER=postgres"
       - "DATABASE_PASSWORD=mysecretpassword1234"
+      - "PGPASSWORD=mysecretpassword1234"
+      - "DATABASE_NAME=testdb"
     links:
       - db
     # volumes:
     #   - "$PWD/docker/web/app:/app" #共有フォルダの設定
     stdin_open: true
     tty: true
-    # command: ash # for debug
+    # entrypoint: ash /app/run.sh java -jar /app/connectTest.jar
+    command: ash # for debug
 
   db:
     image: postgres:10.6-alpine # Base image file
