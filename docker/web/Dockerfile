@@ -6,6 +6,3 @@ ADD app /app/
 
 RUN apk update
 RUN apk add postgresql
-
-# Commands to be executed at container startup
-# CMD [ "java", "-jar", "/app/connectTest.jar" ]
