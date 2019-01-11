@@ -51,6 +51,9 @@ web-container   ash                             Up      0.0.0.0:3000->3000/tcp
 ## 動作確認
 
 ## デバッグ
+docker-compose up -d をしただけだとweb-containerではjava -jar connetTest.jarファイルが実行されるのみです。  
+もし実行に失敗した場合は、コンテナが強制終了されるのでデバッグするときは、docker-compose.ymlファイルの21行目をコメントアウトしてdocker-compose down && docker-compose up -dで再度実行してください。  
+実行後、jarファイルの実行が失敗してもコンテナは起動しているので下記のコマンドでコンテナへ接続してください。
 
 webコンテナへの接続コマンド
 ```bash
