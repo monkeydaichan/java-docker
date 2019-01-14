@@ -1,8 +1,8 @@
-# サンプルアプリケーション
+# Sample Application Java
 javaでDBに接続してcenterinfoのテーブルのcenterinfoカラムを出力するjarファイルを作成しました。  
 これをWEBコンテナに設置してlogsにテーブルデータが出力されれば正常に動作します。
 
-## folder-tree
+## Folder-tree
 
 ```bash
 ├── README.md
@@ -29,7 +29,7 @@ javaでDBに接続してcenterinfoのテーブルのcenterinfoカラムを出力
 $ cd javadocker
 $ docker-compose up -d
 ```
-
+e
 テーブル作成とデータのインサートをします。
 `test/createTable.sql`と`insert.sql`を実行してください。
 
@@ -47,6 +47,10 @@ $ docker-compose logs web
 ```
 
 最下行に`web-container | 0`という出力があれば成功です。
+
+# Authors
+
+# License
 
 # 参考サイト
 http://docs.docker.jp/compose/startup-order.html
