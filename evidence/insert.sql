@@ -1,0 +1,1 @@
+insert into centerinfo VALUES ('0', 'test');

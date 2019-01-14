@@ -83,3 +83,8 @@ docker-compose exec db ash
 ```bash
 docker-compose down
 ```
+
+# 参考サイト
+http://docs.docker.jp/compose/startup-order.html
+https://qiita.com/met_ganchan13/items/2af29ba1f6da87199de0
+https://qiita.com/megmogmog1965/items/e7cd4500006c3b6b1894
